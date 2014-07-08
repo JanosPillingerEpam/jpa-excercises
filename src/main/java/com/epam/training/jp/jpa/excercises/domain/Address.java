@@ -1,22 +1,61 @@
 package com.epam.training.jp.jpa.excercises.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
+@Entity
 public class Address {
-	//TODO: implement
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	int id;
 	
-	// methods to compile project
-	public void setCountry(String readLine) {
+	String street;
+	
+	String city;
+	
+	String country;
+	
+	String zipCode;
+
+	public int getId() {
+		return id;
+	}
+	
+	public String getStreet() {
+		return street;
 	}
 
-	public void setCity(String readLine) {
+	public void setStreet(String street) {
+		this.street = street;
 	}
 
-	public void setStreet(String readLine) {
+	public String getCity() {
+		return city;
 	}
 
-	public void setZipCode(String readLine) {
+	public void setCity(String city) {
+		this.city = city;
 	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
 
 
 }

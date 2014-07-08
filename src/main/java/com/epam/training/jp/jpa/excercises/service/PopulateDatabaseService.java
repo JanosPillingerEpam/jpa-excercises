@@ -28,41 +28,40 @@ public class PopulateDatabaseService {
 	
 
 	public void popluateDatabase() {
-//		TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
-//		
-//		Food food1 = createFood("Tender lion", 4000, 500, false);
-//		Food food2 = createFood("Filet mignon", 5000, 600, false);
-//		
-//		Menu menu = new Menu();
-//		menu.setFromDate(new Date());
-//		menu.setToDate(new Date());
-//		menu.setFoods(newArrayList(food1, food2));
-//		entityManager.persist(menu);		
-//		
-//		Address address = new Address();
-//		address.setCity("Budapest");
-//		address.setStreet("Futó utca 57");
-//		address.setCountry("Hungary");
-//		address.setZipCode("1085");
-//		entityManager.persist(address);
-//				
-//		Restaurant restaurant = new Restaurant();
-//		restaurant.setAddress(address);
-//		restaurant.setMenus(newArrayList(menu));
-//		entityManager.persist(restaurant);
-//		
-//		txManager.commit(status);
+		TransactionStatus status = txManager.getTransaction(new DefaultTransactionDefinition());
 		
+		Food food1 = createFood("Tender lion", 4000, 500, false);
+		Food food2 = createFood("Filet mignon", 5000, 600, false);
+		
+		Menu menu = new Menu();
+		menu.setFromDate(new Date());
+		menu.setToDate(new Date());
+		menu.setFoods(newArrayList(food1, food2));
+		entityManager.persist(menu);		
+		
+		Address address = new Address();
+		address.setCity("Budapest");
+		address.setStreet("Futó utca 57");
+		address.setCountry("Hungary");
+		address.setZipCode("1085");
+		entityManager.persist(address);
+				
+		Restaurant restaurant = new Restaurant();
+		restaurant.setAddress(address);
+		restaurant.setMenus(newArrayList(menu));
+		entityManager.persist(restaurant);
+		
+		txManager.commit(status);
 	}
 
 
-//	private Food createFood(String name, int price, int calories, boolean isVegan) {
-//		Food food = new Food();
-//		food.setName(name);
-//		food.setPrice(price);
-//		food.setCalories(calories);
-//		food.setVegan(isVegan);
-//		entityManager.persist(food);
-//		return food;
-//	}
+	private Food createFood(String name, int price, int calories, boolean isVegan) {
+		Food food = new Food();
+		food.setName(name);
+		food.setPrice(price);
+		food.setCalories(calories);
+		food.setVegan(isVegan);
+		entityManager.persist(food);
+		return food;
+	}
 }
