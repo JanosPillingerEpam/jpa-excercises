@@ -10,7 +10,7 @@ import javax.persistence.OneToOne;
 public class OrderItem {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	int id;
 	int quantity;
 	

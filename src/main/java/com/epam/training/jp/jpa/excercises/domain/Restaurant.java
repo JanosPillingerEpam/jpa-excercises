@@ -13,7 +13,7 @@ import javax.persistence.OneToOne;
 public class Restaurant {
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	int id;
 	String name;
 	

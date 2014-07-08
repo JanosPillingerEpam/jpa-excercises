@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,17 +16,17 @@ import javax.persistence.OneToOne;
 public class FoodOrder {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	int id;
 	String customer;
 	
-	@OneToOne(cascade=CascadeType.ALL)
+	@OneToOne(cascade=CascadeType.PERSIST)
 	Address deliveryAddress;
 	
-	@OneToMany(cascade=CascadeType.ALL)
+	@OneToMany(cascade=CascadeType.PERSIST)
 	List<OrderItem> orderItems;
 	
-	@Enumerated
+	@Enumerated(EnumType.STRING)
 	OrderState state;
 
 	public FoodOrder(List<OrderItem> createOrderItems, Address address, String customer, OrderState pending) {

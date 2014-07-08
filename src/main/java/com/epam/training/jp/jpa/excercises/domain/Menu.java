@@ -14,7 +14,7 @@ import javax.persistence.OneToMany;
 public class Menu {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue
 	int id;
 	Date fromDate;
 	Date toDate;

@@ -19,10 +19,7 @@ public class JpaMenuDao extends GenericJpaDao implements MenuDao {
 
 	@Override
 	public Food findFoodById(int foodId) {
-		String query = "SELECT f FROM Food f "
-				+ "WHERE f.id = :foodId";
-		return entityManager.createQuery(query, Food.class)
-				.setParameter("foodId", foodId).getSingleResult();
+		return entityManager.find(Food.class, foodId);
 	}
 
 }
